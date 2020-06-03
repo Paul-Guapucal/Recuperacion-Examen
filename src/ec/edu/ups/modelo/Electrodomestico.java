@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author paul_
  */
-public class Electrodomestico {
+public class Electrodomestico implements Comparable<Electrodomestico> {
     
     private int codigo;
     private String descripcion;
@@ -123,6 +123,11 @@ public class Electrodomestico {
         return precioBase = (precioBase + precioAdicional + precioAdicionalPeso);
     }
 
+    public int compareTo(Electrodomestico p){
+        
+        return (int) (this.precioBase-p.precioBase);
+    }
+    
     @Override
     public int hashCode() {
         int hash = 5;
@@ -148,13 +153,11 @@ public class Electrodomestico {
         return true;
     }
 
-        
-
         @Override
         public String toString
         
             () {
-        return "Electrodomestico{" + "codigo=" + codigo + ", descripcion=" + descripcion + ", precioBase=" + precioBase + ", color=" + color + ", consumoEnergetico=" + consumoEnergetico + ", peso=" + peso + '}';
+        return "\nDatos del electrodomestico{" + "codigo=" + codigo + ", descripcion=" + descripcion + ", precioBase=" + precioBase + ", color=" + color + ", consumoEnergetico=" + consumoEnergetico + ", peso=" + peso + '}';
         
     }
 }
